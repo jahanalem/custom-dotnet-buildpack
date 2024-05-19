@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+echo "Installing .NET SDK"
+mkdir -p /app/.dotnet
+curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --install-dir /app/.dotnet --channel 8.0
+export PATH=$PATH:/app/.dotnet
+dotnet --info
